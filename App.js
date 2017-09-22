@@ -26,8 +26,10 @@ const HomeContainer = createContainer(Home, props => ({
   tours: query({ path: 'tour', limit: 10 }),
 }))
 
+
+
 const routes = () => (
-  <Router history={browserHistory}>
+  <Router history={browserHistory} >
     <Route path='/' component={HomeContainer} />
     <Route path='/admin' component={Admin} />
     <Route path='*' component={PageError} />

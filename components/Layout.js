@@ -1,10 +1,21 @@
 import React from "react";
 import Head from "react-helmet";
 
-import { css } from "glamor";
+import { css, fontFace } from "glamor";
+
+const appCss = css({
+  minHeight: '100vh',
+  fontSize: '0.8em',
+  fontFamily: fontFace({
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    fontWeight: 400,
+    src: "local('Open Sans'), local('OpenSans'), url('https://fonts.googleapis.com/css?family=Roboto')",
+  })
+})
 
 const Layout = ({ children }) => (
-  <div>
+  <div {...appCss}>
     <Head>
       <html lang="en" />
       <meta charSet="utf-8" />

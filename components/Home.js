@@ -10,30 +10,34 @@ import Tours from "./Tours";
 const container = css({
   label: "container",
   display: "grid",
-  gridTemplateAreas: '"a b b c" "d e e c" "d f f f"',
+  gridTemplateAreas: '"a b c" "d e c" "d . f"',
   gridGap: "15px 15px",
-  border: "1px solid red",
   margin: "0 100px",
+  backgroundColor: "rgba(58, 50, 50, 0.1)",
   "@media(max-width: 768px)": {
     margin: "0 10px",
     gridTemplateAreas: '"a" "b" "c" "d" "e" "f"',
-  }
+    gridTemplateColumns: '100%',
+  },
+  gridTemplateColumns: '25% 50% 25%',
 });
 
 const gridA = css({
   gridArea : 'a',
+  justifySelf: 'center'
 })
 
 const gridB = css({
-  gridArea : 'b'
+  gridArea : 'b',
 })
 
 const gridC = css({
-  gridArea : 'c'
+  gridArea : 'c',
 })
 
 const gridD = css({
-  gridArea : 'd'
+  gridArea : 'd',
+  overflow: 'hidden'
 })
 
 const gridE = css({
@@ -41,7 +45,7 @@ const gridE = css({
 })
 
 const gridF = css({
-  gridArea : 'f'
+  gridArea : 'f',
 })
 
 const image = css({
@@ -50,6 +54,7 @@ const image = css({
 
 const videoWrapper = css({
   position: "relative",
+  minHeight: '33vh'
 });
 
 const video = css({
@@ -61,10 +66,8 @@ const video = css({
 });
 
 const content = css({
-  color: "#fff",
-  backgroundColor: "#cccccc",
+  border: '1px solid red',
   padding: "20px",
-  fontSize: "calc(1vw + 1em)",
   minHeight: "20vh",
 });
 
@@ -93,6 +96,12 @@ const Home = ({ isLoading, home, tours }) => (
                   <ReactPlayer url={soundCloud} playsinline={true}   width="auto"
                           height="auto"/>
                      <ReactPlayer url={soundCloud} playsinline={true}   width="auto"
+                          height="auto"/>
+                          <ReactPlayer url={soundCloud} playsinline={true}   width="auto"
+                          height="auto"/>
+                          <ReactPlayer url={soundCloud} playsinline={true}   width="auto"
+                          height="auto"/>
+                          <ReactPlayer url={soundCloud} playsinline={true}   width="auto"
                           height="auto"/>
                 </div>
                 <div className="3" {...content} {...gridB}>
