@@ -7,11 +7,14 @@ media_folder: "public/assets"
 public_folder: "/assets"
 
 collections: # A list of collections the CMS should be able to edit
-  - name: "post" # Used in routes, e.g., /admin/collections/:slug/edit
-    label: "Post" # Used in the UI, e.g., "New Post"
-    folder: "content/posts" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
+  - name: "home" # Used in routes, e.g., /admin/collections/:slug/edit
+    label: "Home" # Used in the UI, e.g., "New Post"
+    folder: "content/home" # The path to the folder where the documents are stored
+    create: false # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
-      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Body", name: "body", widget: "markdown"}      
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Logo", name: "logo", widget: "image"}
+      - {label: "Background", name: "Background"" widget: "image"}
+      - {label: "Video", name: "video", widget: "string"}      
+      - {label: "Decription", name: "decription", widget: "string"}            
       - {label: "Publish Date", name: "date", widget: "datetime"}

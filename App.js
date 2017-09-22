@@ -7,25 +7,27 @@ import {
   renderApp
 } from '@phenomic/preset-react-app/lib/client'
 
+import { rehydrate } from "glamor";
+import "glamor/reset";
+
+import './app.css'
+
 import Home from './components/Home'
-import BlogPost from './components/BlogPost'
 import PageError from './components/PageError'
 import Admin from './components/Admin'
 
-const BlogPostContainer = createContainer(BlogPost, props => ({
-  page: query({ path: 'posts', id: props.params.splat })
-}))
+if (typeof window !== "undefined" && window._glam) {
+  rehydrate(window._glam);
+}
+
 
 const HomeContainer = createContainer(Home, props => ({
-  posts: query({ path: 'posts', limit: 2, after: props.params.after }),
-  tests: query({ path: 'tests' })
+  home: query({ path: 'home', limit: 1 }),
 }))
 
 const routes = () => (
   <Router history={browserHistory}>
     <Route path='/' component={HomeContainer} />
-    <Route path='/after/:after' component={HomeContainer} />
-    <Route path='/blog/*' component={BlogPostContainer} />
     <Route path='/admin' component={Admin} />
     <Route path='*' component={PageError} />
   </Router>

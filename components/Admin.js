@@ -13,7 +13,7 @@ const Admin = ({ children }) => (
         href="https://unpkg.com/netlify-cms@latest/dist/cms.css"
       />
       <script src="https://unpkg.com/netlify-cms@0.4/dist/cms.js" />
-    </Head>
+    </Head>    
   </div>
 );
 
