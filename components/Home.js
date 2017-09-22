@@ -5,6 +5,8 @@ import Head from "react-helmet";
 import ReactPlayer from "react-player";
 import { css } from "glamor";
 
+import Tours from "./Tours";
+
 const container = css({
   label: "container",
   display: "grid",
@@ -66,7 +68,9 @@ const content = css({
   minHeight: "20vh",
 });
 
-const Home = ({ isLoading, home }) => (
+const soundCloud = "https://soundcloud.com/acadians/1-thousand-years-memory";
+
+const Home = ({ isLoading, home, tours }) => (
   <Layout>
     <h1>Acadians</h1>
     {isLoading && "Loading..."}
@@ -86,7 +90,10 @@ const Home = ({ isLoading, home }) => (
                     <img {...image} src={data.logo} />
                 </div>
                 <div className="2" {...content} {...gridD}>
-                  2
+                  <ReactPlayer url={soundCloud} playsinline={true}   width="auto"
+                          height="auto"/>
+                     <ReactPlayer url={soundCloud} playsinline={true}   width="auto"
+                          height="auto"/>
                 </div>
                 <div className="3" {...content} {...gridB}>
                   3
@@ -100,7 +107,7 @@ const Home = ({ isLoading, home }) => (
                         />
                 </div>
                 <div className="5" {...content} {...gridC}>
-                  5
+                  <Tours tours={tours} />
                 </div>
                 <div className="6" {...content} {...gridF}>
                   6

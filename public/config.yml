@@ -18,3 +18,11 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Video", name: "video", widget: "string"}      
       - {label: "Decription", name: "decription", widget: "string"}            
       - {label: "Publish Date", name: "date", widget: "datetime"}
+  - name: "tour" 
+    label: "Tour" 
+    folder: "content/tour" 
+    create: true 
+    fields: 
+      - {label: "Place", name: "place", widget: "string"}
+      - {label: "Ville", name: "ville", widget: "image"}
+      - {label: "Date", name: "date", widget: "datetime"}

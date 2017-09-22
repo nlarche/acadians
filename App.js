@@ -23,6 +23,7 @@ if (typeof window !== "undefined" && window._glam) {
 
 const HomeContainer = createContainer(Home, props => ({
   home: query({ path: 'home', limit: 1 }),
+  tours: query({ path: 'tour', limit: 10 }),
 }))
 
 const routes = () => (
