@@ -120,7 +120,7 @@ const Home = ({ isLoading, home, tours, playlist }) => (
                   <Playlist playlist={playlist} />                    
                 </div>
                 <div className="3" {...content} {...gridB}>
-                    <div {...titleh2}>Todo buy album</div>
+                    <div {...titleh2}>Todo buy al</div>
                 </div>
                 <div className="4" {...content} {...videoWrapper} {...gridE}>
                       <ReactPlayer
