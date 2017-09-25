@@ -25,6 +25,7 @@
     "moment": "^2.18.1",
     "prettier": "^1.7.0",
     "react-helmet": "^5.2.0",
-    "react-player": "^0.24.5"
+    "react-player": "^0.24.5",
+    "react-social-icons": "^2.7.0"
   }
 }

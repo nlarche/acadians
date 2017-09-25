@@ -31,5 +31,6 @@ collections: # A list of collections the CMS should be able to edit
     folder: "content/playlist" 
     create: true 
     fields: 
+      - {label: "Titre", name: "titre", widget: "string"}     
       - {label: "url", name: "url", widget: "string"}        
       - {label: "Date", name: "date", widget: "datetime"}

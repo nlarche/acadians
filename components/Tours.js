@@ -15,10 +15,15 @@ const tourStyle = css({
   lineHeight: '22px',
 })
 
+const title = css({
+  color: '#fff',
+  fontSize: '30px',
+})
  
 
 const Tours = ({ tours }) => (
   <div {...tourStyle}>
+    <h2 {...title} >Summer Tour 2017</h2>
     {tours &&
       tours.node &&
       tours.node.list &&

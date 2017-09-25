@@ -3,6 +3,8 @@ import Head from "react-helmet";
 
 import { css, fontFace } from "glamor";
 
+import Footer from './Footer';
+
 const appCss = css({
   minHeight: "100vh",
   fontSize: "0.8em",
@@ -30,7 +32,7 @@ const Layout = ({ children }) => (
     <header>{/* ... */}</header>
     <div>{children}</div>
 
-    <footer>{/* ... */}</footer>
+    <Footer />
   </div>
 );
 

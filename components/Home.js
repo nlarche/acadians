@@ -11,13 +11,13 @@ import Playlist from "./Playlist";
 const container = css({
   label: "container",
   display: "grid",
-  gridTemplateAreas: '"a b c" "d e c" "d . f"',
+  gridTemplateAreas: '"a e c" "d b c" "d . f"',
   gridGap: "15px 15px",
   margin: "0 100px",
   backgroundColor: "rgba(58, 50, 50, 0.1)",
   "@media(max-width: 768px)": {
     margin: "0 10px",
-    gridTemplateAreas: '"a" "b" "c" "d" "e" "f"',
+    gridTemplateAreas: '"a" "e" "b" "c" "d" "f"',
     gridTemplateColumns: '100%',
   },
   gridTemplateColumns: '25% 50% 25%',
@@ -89,6 +89,7 @@ const titleh2 = css({
   "@media(max-width: 768px)": {
     fontSize: '20px',
   },
+   color: '#fff',
 });
 
 
@@ -113,6 +114,7 @@ const Home = ({ isLoading, home, tours, playlist }) => (
               <div {...container}>
                 <div className="1" {...content} {...gridA}>
                     <img {...image} src={data.logo} />
+                    <h2 {...titleh2} >Nouvel album</h2>
                 </div>
                 <div className="2" {...content} {...gridD}>
                   <Playlist playlist={playlist} />                    
