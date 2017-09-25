@@ -3,6 +3,7 @@
   "scripts": {
     "start": "phenomic start",
     "build": "phenomic build",
+    "test": "phenomic test",
     "deploy": "npm run build && sh script/post-build.sh && gh-pages -d dist"
   },
   "devDependencies": {
