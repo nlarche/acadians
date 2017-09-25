@@ -51,7 +51,7 @@ const gridF = css({
 const image = css({
   maxWidth: "10vw",
   "@media(max-width: 768px)": {
-    fontSize: '20px',
+    maxWidth: "50vw",
   },
 });
 
