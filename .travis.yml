@@ -9,4 +9,7 @@ deploy:
     branch: master
 before_install:
 - openssl aes-256-cbc -K $encrypted_2d5d49a6c100_key -iv $encrypted_2d5d49a6c100_iv
-  -in rsa.enc -out ~\/rsa -d
+  -in rsa.enc -out $HOME/.ssh/rsa -d
+env:
+  global:
+    secure: Nn4wjLmWL/Ek45Do2oXSySzoM90DM8SJXmXvah2TcRFx7jASR2Kaqw/cmFZuPzBL6yr+w9HccER4E98kr0mkm8H30hImeePRLAn5pAdgRkejpb4FkW1awj4k3z8u9SkE0Wl4Atu9NL/I5QTk5toq9KlGFWsxepjzRdY5pF7DOQsSdMwqAnlKMbLrtkKfslXH4ARcYjl3Rgn0Hv0Xj1ssrLrAmn1DzQ8otzq+ixBZD8tyhZ6KZqO3Y2zvKGa3zEyMWAWkhAcIgP9Rz2Mc5DjlkUDg5qVCxxmB0R9zREsy29h+B4a06nX5pb280eCffw3dPj8iHAQr35AbUpkRL1n+S2tQjNTPt+s4kgjzKFaWJwxZ9Tj267b+nRAbpcZTcDSmdHOa3XwuDg2WH3GVx6wHelJd5PxH8fP60GZXq23slwuoEFVjIqADNiI5SIs59syfNMfPv0SuoRYwySqsthujTSvfKpFs1wYyoyUm735FK8xDyJ5rqhFL55FWOnoUiOeGHS6v0UfCVM0bVuT5ITLURO7ea9wamtGbHdeueP48HDpcF7gQ4ZWTkx+QMgFZOQOHt91pnKXHfvhSU5C1K+NrJHuRd8i5VfI9yK4x/tQY5JNYUMy9qjkoKCQGOoze2tot5WYmvdiai2ZdMBHiRJTtBG69WvMDYUydHEYkA9R1pOs=
