@@ -4,15 +4,21 @@ import Head from "react-helmet";
 import { css, fontFace } from "glamor";
 
 const appCss = css({
-  minHeight: '100vh',
-  fontSize: '0.8em',
+  minHeight: "100vh",
+  fontSize: "0.8em",
   fontFamily: fontFace({
-    fontFamily: 'Roboto',
-    fontStyle: 'normal',
+    fontFamily: "Oswald",
+    fontStyle: "normal",
     fontWeight: 400,
-    src: "local('Open Sans'), local('OpenSans'), url('https://fonts.googleapis.com/css?family=Roboto')",
+    src:
+      "local('Open Sans'), local('OpenSans'), url('https://fonts.googleapis.com/css?family=Oswald')"
+  }),
+});
+
+css.global('html', {
+    background: "url(/assets/background.jpg) no-repeat center center fixed",
+    backgroundSize: "cover"
   })
-})
 
 const Layout = ({ children }) => (
   <div {...appCss}>
@@ -23,7 +29,7 @@ const Layout = ({ children }) => (
     </Head>
     <header>{/* ... */}</header>
     <div>{children}</div>
-     
+
     <footer>{/* ... */}</footer>
   </div>
 );

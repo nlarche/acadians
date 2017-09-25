@@ -8,7 +8,11 @@ const formatDate = (date) => {
 }
 
 const tourStyle = css({
-  color: '#aca196'
+  color: '#fff',
+  background: 'rgba(0,0,0,0.5)',
+  padding: '25px 29px',
+  fontSize: '14px',
+  lineHeight: '22px',
 })
 
  

@@ -2,17 +2,18 @@
   "private": true,
   "scripts": {
     "start": "phenomic start",
-    "build": "phenomic build"
+    "build": "phenomic build",
+    "deploy": "npm run build && sh script/post-build.sh && gh-pages -d dist"
   },
   "devDependencies": {
     "@phenomic/cli": "^1.0.0-alpha.8",
     "@phenomic/core": "^1.0.0-alpha.8",
     "@phenomic/preset-react-app": "^1.0.0-alpha.8",
     "babel-plugin-glamor": "^3.0.0-1",
+    "gh-pages": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-router": "^3.0.5",
-    "standard": "^10.0.3"
+    "react-router": "^3.0.5"
   },
   "phenomic": {
     "presets": [

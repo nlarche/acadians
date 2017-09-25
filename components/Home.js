@@ -6,6 +6,7 @@ import ReactPlayer from "react-player";
 import { css } from "glamor";
 
 import Tours from "./Tours";
+import Playlist from "./Playlist";
 
 const container = css({
   label: "container",
@@ -37,7 +38,6 @@ const gridC = css({
 
 const gridD = css({
   gridArea : 'd',
-  overflow: 'hidden'
 })
 
 const gridE = css({
@@ -49,7 +49,10 @@ const gridF = css({
 })
 
 const image = css({
-  maxWidth: "10vw"
+  maxWidth: "10vw",
+  "@media(max-width: 768px)": {
+    fontSize: '20px',
+  },
 });
 
 const videoWrapper = css({
@@ -66,16 +69,35 @@ const video = css({
 });
 
 const content = css({
-  border: '1px solid red',
+  // border: '1px solid red',
   padding: "20px",
   minHeight: "20vh",
 });
 
-const soundCloud = "https://soundcloud.com/acadians/1-thousand-years-memory";
+const title = css({  
+  display: 'flex',
+  flexDirection : 'column',
+  justifyContent: 'start',
+  alignItems : 'center',
+  color: '#fff',
+  fontWeight: 500,  
+  paddingTop : '1em'
+});
 
-const Home = ({ isLoading, home, tours }) => (
+const titleh2 = css({  
+  fontSize: '40px',
+  "@media(max-width: 768px)": {
+    fontSize: '20px',
+  },
+});
+
+
+const Home = ({ isLoading, home, tours, playlist }) => (
   <Layout>
-    <h1>Acadians</h1>
+    <div {...title}>
+      <img src='/assets/acadians.png' />
+      <h2 {...titleh2} >Thousand Years Memory</h2>
+    </div>
     {isLoading && "Loading..."}
     {!isLoading && (
       <div>
@@ -93,16 +115,7 @@ const Home = ({ isLoading, home, tours }) => (
                     <img {...image} src={data.logo} />
                 </div>
                 <div className="2" {...content} {...gridD}>
-                  <ReactPlayer url={soundCloud} playsinline={true}   width="auto"
-                          height="auto"/>
-                     <ReactPlayer url={soundCloud} playsinline={true}   width="auto"
-                          height="auto"/>
-                          <ReactPlayer url={soundCloud} playsinline={true}   width="auto"
-                          height="auto"/>
-                          <ReactPlayer url={soundCloud} playsinline={true}   width="auto"
-                          height="auto"/>
-                          <ReactPlayer url={soundCloud} playsinline={true}   width="auto"
-                          height="auto"/>
+                  <Playlist playlist={playlist} />                    
                 </div>
                 <div className="3" {...content} {...gridB}>
                   3

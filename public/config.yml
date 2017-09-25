@@ -26,3 +26,10 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Place", name: "place", widget: "string"}
       - {label: "Ville", name: "ville", widget: "image"}
       - {label: "Date", name: "date", widget: "datetime"}
+  - name: "playList" 
+    label: "playList" 
+    folder: "content/playList" 
+    create: true 
+    fields: 
+      - {label: "url", name: "url", widget: "string"}        
+      - {label: "Date", name: "date", widget: "datetime"}
