@@ -5,6 +5,9 @@ deploy:
   skip_cleanup: true
   provider: script
   script: npm run deploy
-  github_token: $GITHUB_TOKEN
+  github_token: "$GITHUB_TOKEN"
   on:
     branch: master
+env:
+  global:
+    secure: dLp2XMEka5gBtvwC2uzxyX8aQB8wQG/in4d3keuBpZkGAvUi5Lj42ejZbbMzghVyZ2MlWuFAptouh72JgzL5+77CoMr+qjY1MO5FPqBRXWhME5oUzw9OvhffORB06aICdRLHCNYW+cO+HG0J8pm5YqhJW5mChnQbD+Y91+yDDYkHOO0NKduoer3UspRcPzbB0X0iR2kbH/T5iCOnru4O2yeZBNzB95p3NeETKSsl0en21+0D+BtU/5iKES9n9tqCcF2mPHPAeuLcjRLNraKOClVA8pzbtrf0+MXjGVoLaw06SGSTJeBk1KaDCtBbSFm2J1uWN62aCqSxcJnaR34EQ4XUpuDAFkgJ287iKPn6XM3HMbuZByzS2Ibkt3IwG3mw1Smfh0gV1khQlfPuXWh7U0IbajLTN4lCehEkxJL/TBMOzs9caoPv3BCy+GfqLWlv2sDSrLaOUD+zcEulHksnDq7pDVZt92Z7uc1pf2+Xuolvd7XMhADcsdc49GdOuC+ScD4BioQ/i+mYQG2Nh09KU1NcOdCBURHVxAc5DcB1BYJoyiCsYORBhSzIpmNN9aLl8Ju6TtIW8mfx84/aTO0sA5vgS0R5WwwYLzij77i8xVWVQob/PAg6uc/LE/j0Eplrhttptpo0cVvH8+WHsNvF1NrFGIluGp7JJRCBUl8ndnM=
