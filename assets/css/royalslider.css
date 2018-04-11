@@ -231,7 +231,7 @@
 }
 
 img.rsImg {
-	max-width: none;
+	/* max-width: none; */
 }
 
 .grab-cursor {
