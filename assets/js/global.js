@@ -68,12 +68,6 @@ jQuery(document).ready(function() {
       .accordion()
     ;
 
-    // Event Countdown
-    $('.event_countdown').countdown({ 
-        until: new Date(2014, 11 - 1, 25), timezone: +10,
-        labels: ['Years', 'Months', 'Weeks', 'Days', 'Hr', 'Min', 'Second']
-    });
-
     // Isotope
     var $container = $('.gallery-filterable');
     $container.isotope({

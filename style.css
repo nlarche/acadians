@@ -266,8 +266,8 @@ body, button, input, select, textarea {
 }
 
 body {
-    background: #151515;
-    /*background: url("assets/images/dummy_image.png") no-repeat fixed center top;*/
+    background: black;
+    background: url("assets/acadians/bg.jpg") no-repeat fixed center top;
 }
 
 pre, code, input, textarea {
@@ -727,7 +727,7 @@ input, textarea, input[type="submit"]:focus {
 }
 
 .header {
-    padding: 40px 0;
+    padding: 0px 0;
 }
 .header .container {
     max-width: 1098px;
