@@ -60,10 +60,6 @@ jQuery(document).ready(function() {
         type:'iframe'
     });
 
-    $('.popup-image').magnificPopup({
-        type:'image'
-    });
-
     $('.ui.accordion')
       .accordion()
     ;
