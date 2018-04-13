@@ -267,7 +267,7 @@ body, button, input, select, textarea {
 
 body {
     background: black;
-    background: url("assets/acadians/bgv7.jpg") no-repeat fixed center top;
+    background: url("http://res.cloudinary.com/acadians/image/upload/v1523641257/bg.jpg") no-repeat fixed center top;
 }
 
 pre, code, input, textarea {
