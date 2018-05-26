@@ -1,9 +1,6 @@
 jQuery(document).ready(function() {
     "use strict";
 
-    // Call contact form
-    new  Contact_Form();
-
     var $ = jQuery,
     html = $('html');
 
@@ -83,81 +80,91 @@ jQuery(document).ready(function() {
 
 });
 
-// Contact Form
-function Contact_Form(){
+// // Contact Form
+// function Contact_Form(){
 
-    "use strict";
+//     "use strict";
     
-    var error_report;
-    jQuery("#contact_submit").bind("click",function(){
+//     var error_report;
+//     jQuery("#contact_submit").bind("click",function(){
 
-        // Hide notice message when submit
-        jQuery("#contact_form .notice_ok").hide();
-        jQuery("#contact_form .notice_error").hide();
-        error_report = false;
+//         // Hide notice message when submit
+//         jQuery("#contact_form .notice_ok").hide();
+// // Contact Form
+// function Contact_Form(){
 
-        jQuery("#contact_form input, #contact_form select, #contact_form textarea, #contact_form radio").each(function(i){
+//     "use strict";
+    
+//     var error_report;
+//     jQuery("#contact_submit").bind("click",function(){
 
-            var form_element          = jQuery(this);
-            var form_element_value    = jQuery(this).val();
-            var form_element_id       = jQuery(this).attr("id");
-            //var form_element_class    = jQuery(this).attr("class");
-            var form_element_required = jQuery(this).hasClass("required");
+//         // Hide notice message when submit
+//         jQuery("#contact_form .notice_ok").hide();
+//         jQuery("#contact_form .notice_error").hide();
+//         error_report = false;
 
-            // Check email validation
-            if(form_element_id === "contact_email"){
-                form_element.removeClass("error valid");
-                if(!form_element_value.match(/^\w[\w|\.|\-]+@\w[\w|\.|\-]+\.[a-zA-Z]{2,4}$/)){
-                    form_element.addClass("error");
-                    error_report = true;
-                } else {
-                    form_element.addClass("valid");
-                }
-            }
+//         jQuery("#contact_form input, #contact_form select, #contact_form textarea, #contact_form radio").each(function(i){
 
-            // Check input required validation
-            if(form_element_required && form_element_id !== "contact_email"){
-                form_element.removeClass("error valid");
-                if(form_element_value === ""){
-                    form_element.addClass("error");
-                    error_report = true;
-                } else {
-                    form_element.addClass("valid");
-                }
-            }
+//             var form_element          = jQuery(this);
+//             var form_element_value    = jQuery(this).val();
+//             var form_element_id       = jQuery(this).attr("id");
+//             //var form_element_class    = jQuery(this).attr("class");
+//             var form_element_required = jQuery(this).hasClass("required");
 
-            if(jQuery("#contact_form input, #contact_form select, #contact_form textarea, #contact_form radio").length === i+1){
-                if(error_report === false){
-                    jQuery("#contact_form .loading").show();
+//             // Check email validation
+//             if(form_element_id === "contact_email"){
+//                 form_element.removeClass("error valid");
+//                 if(!form_element_value.match(/^\w[\w|\.|\-]+@\w[\w|\.|\-]+\.[a-zA-Z]{2,4}$/)){
+//                     form_element.addClass("error");
+//                     error_report = true;
+//                 } else {
+//                     form_element.addClass("valid");
+//                 }
+//             }
 
-                    var $string = "ajax=true";
-                    jQuery("#contact_form input, #contact_form select, #contact_form textarea, #contact_form radio").each(function(){
-                        var $form_element_name     = jQuery(this).attr("name");
-                        var $form_element_value    = encodeURIComponent(jQuery(this).val());
-                        $string = $string + "&" + $form_element_name + "=" + $form_element_value;
-                    });
+//             // Check input required validation
+//             if(form_element_required && form_element_id !== "contact_email"){
+//                 form_element.removeClass("error valid");
+//                 if(form_element_value === ""){
+//                     form_element.addClass("error");
+//                     error_report = true;
+//                 } else {
+//                     form_element.addClass("valid");
+//                 }
+//             }
 
-                    jQuery.ajax({
-                        type: "POST",
-                        url: "./page_contact_ajax.php",
-                        data:$string,
-                        success: function(response){
-                            jQuery("#contact_form .loading").hide();
-                            if(response === 'success'){
-                                jQuery("#contact_form .notice_ok").show();
-                                jQuery("#contact_form .field_submit").hide();
-                            } else {
-                                jQuery("#contact_form .notice_error").show();
-                                jQuery("#contact_form .field_submit").hide();
-                            }
-                        }
-                    });
-                }
-            }
+//             if(jQuery("#contact_form input, #contact_form select, #contact_form textarea, #contact_form radio").length === i+1){
+//                 if(error_report === false){
+//                     jQuery("#contact_form .loading").show();
+
+//                     var $string = "ajax=true";
+//                     jQuery("#contact_form input, #contact_form select, #contact_form textarea, #contact_form radio").each(function(){
+//                         var $form_element_name     = jQuery(this).attr("name");
+//                         var $form_element_value    = encodeURIComponent(jQuery(this).val());
+//                         $string = $string + "&" + $form_element_name + "=" + $form_element_value;
+//                     });
+
+//                     jQuery.ajax({
+//                         type: "POST",
+//                         url: "./page_contact_ajax.php",
+//                         data:$string,
+//                         success: function(response){
+//                             jQuery("#contact_form .loading").hide();
+//                             if(response === 'success'){
+//                                 jQuery("#contact_form .notice_ok").show();
+//                                 jQuery("#contact_form .field_submit").hide();
+//                             } else {
+//                                 jQuery("#contact_form .notice_error").show();
+//                                 jQuery("#contact_form .field_submit").hide();
+//                             }
+//                         }
+//                     });
+//                 }
+//             }
 
 
-        });
-    return false;
-    });
+//         });
+//     return false;
+//     });
 
-}
+// }

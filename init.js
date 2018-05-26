@@ -15,7 +15,7 @@ function initGallery(){
     
     var div = document.querySelector("[data-gallery]");
     if (div){
-        for (var i= 1; i <= 11; i++){
+        for (var i= 1; i <= 36; i++){
 
             var galleryItem = createElement("div", "eight wide column");
             galleryItem.appendChild(createImageForThemes(i));
@@ -29,7 +29,7 @@ function initGalleryCaroussel(){
     
     var div = document.querySelector("[data-gallery-carousel]");
     if (div){
-        for (var i= 1; i <= 11; i++){
+        for (var i= 1; i <= 36; i++){
 
             var galleryItem = createElement("div", "gallery_item");
             galleryItem.appendChild(createImageForThemes(i));
