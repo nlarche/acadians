@@ -1,4 +1,4 @@
-var baseurl = "http://res.cloudinary.com/acadians/image/upload/v1523641257/";
+var baseurl = "http://res.cloudinary.com/acadians/image/upload/v1527360791/";
 
 document.addEventListener('DOMContentLoaded', function (){
 
@@ -9,7 +9,13 @@ document.addEventListener('DOMContentLoaded', function (){
         type:'image'
     });
 
+    loadImage();
+
 });
+
+document.addEventListener('scroll', function (){
+    loadImage();
+})
 
 function initGallery(){
     
@@ -25,14 +31,15 @@ function initGallery(){
     }
 }
 
+var dataCarrousel = [1, 2, 3, 7, 8, 9, 10, 11, 12, 13];
 function initGalleryCaroussel(){
     
     var div = document.querySelector("[data-gallery-carousel]");
     if (div){
-        for (var i= 1; i <= 36; i++){
+        for (var i=0; i <= dataCarrousel.length -1; i++){
 
             var galleryItem = createElement("div", "gallery_item");
-            galleryItem.appendChild(createImageForThemes(i));
+            galleryItem.appendChild(createImageForThemes(dataCarrousel[i]));
 
             div.appendChild(galleryItem);
         }
@@ -58,7 +65,7 @@ function createElement(name, className){
 function createImageForThemes(i){
     var imageUrl = baseurl + "gallery/" + i + ".jpg";
     var image = document.createElement("img");
-    image.src =imageUrl
+    image.dataset.src = imageUrl
     
     var span = createElement("span", "image-button");
     var a = createElement("a", "popup-image");
@@ -70,3 +77,34 @@ function createImageForThemes(i){
     imageLightbox.appendChild(a);
     return imageLightbox;
 }
+
+function elementInViewport(el) {
+    var top = el.offsetTop;
+    var left = el.offsetLeft;
+    var width = el.offsetWidth;
+    var height = el.offsetHeight;
+  
+    while(el.offsetParent) {
+      el = el.offsetParent;
+      top += el.offsetTop;
+      left += el.offsetLeft;
+    }
+  
+    return (
+      top >= window.pageYOffset &&
+      left >= window.pageXOffset &&
+      (top + height) <= (window.pageYOffset + window.innerHeight) &&
+      (left + width) <= (window.pageXOffset + window.innerWidth)
+    );
+  }
+
+
+  function loadImage(){
+    [].forEach.call(document.querySelectorAll('img[data-src]'),  function(img) {
+        console.log(img);
+        if (elementInViewport(img)){
+            img.setAttribute('src', img.getAttribute('data-src'));
+            img.removeAttribute('data-src');
+        }
+    });
+  }
