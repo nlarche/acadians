@@ -1,4 +1,4 @@
-var baseurl = "http://res.cloudinary.com/acadians/image/upload/v1527360791/";
+var baseurl = "https://res.cloudinary.com/acadians/image/upload/v1527360791/";
 
 document.addEventListener('DOMContentLoaded', function (){
 
