@@ -24,7 +24,7 @@ function initGallery(){
         for (var i= 1; i <= 36; i++){
 
             var galleryItem = createElement("div", "eight wide column");
-            galleryItem.appendChild(createImageForThemes(i));
+            galleryItem.appendChild(createImageForThemes(i, true));
 
             div.appendChild(galleryItem);
         }
@@ -39,9 +39,9 @@ function initGalleryCaroussel(){
         for (var i=0; i <= dataCarrousel.length -1; i++){
 
             var galleryItem = createElement("div", "gallery_item");
-            galleryItem.appendChild(createImageForThemes(dataCarrousel[i]));
-
+            galleryItem.appendChild(createImageForThemes(dataCarrousel[i], false));
             div.appendChild(galleryItem);
+
         }
 
         $(".gallery_carousel").owlCarousel({
@@ -62,10 +62,15 @@ function createElement(name, className){
     return elm;
 }
 
-function createImageForThemes(i){
+function createImageForThemes(i, lazy){
     var imageUrl = baseurl + "gallery/" + i + ".jpg";
     var image = document.createElement("img");
-    image.dataset.src = imageUrl
+    if (lazy){
+        image.dataset.src = imageUrl;
+    } else {
+        image.src = imageUrl;
+    }
+
     
     var span = createElement("span", "image-button");
     var a = createElement("a", "popup-image");
