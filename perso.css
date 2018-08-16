@@ -40,10 +40,36 @@
 }
 
 
+.home {
+    height: 100%;
+}
+
+.top_container {
+    display: flex;
+    justify-content: center;
+}
+
+.top_top {
+    position: absolute;
+    top: 0;
+}
+
+.button_enter {
+    position: fixed;
+    bottom: 30px;
+}
+
 
 @media screen and (max-width: 480px) {
     .royalSlider,
     .rsOverflow {
         max-height: 30vh;
+    }
+}
+
+@media screen and (max-width: 849px) {
+
+    .home {
+        display: none;
     }
 }

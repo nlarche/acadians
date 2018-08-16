@@ -10,12 +10,14 @@ document.addEventListener('DOMContentLoaded', function (){
     });
 
     loadImage();
+    scrollHome();
 
 });
 
 document.addEventListener('scroll', function (){
     loadImage();
 })
+
 
 function initGallery(){
     
@@ -106,10 +108,22 @@ function elementInViewport(el) {
 
   function loadImage(){
     [].forEach.call(document.querySelectorAll('img[data-src]'),  function(img) {
-        console.log(img);
         if (elementInViewport(img)){
             img.setAttribute('src', img.getAttribute('data-src'));
             img.removeAttribute('data-src');
         }
     });
   }
+
+
+function scrollHome (){
+    $("#scrollHome").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#masthead").offset().top
+        }, 600);
+        setTimeout(function (){
+            $(".home").hide();
+        }, 700);
+
+    })
+}
